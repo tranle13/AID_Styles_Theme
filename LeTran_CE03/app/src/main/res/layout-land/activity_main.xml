@@ -15,9 +15,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_gravity="center"
+            style="@style/FrameLayoutImage.Landscape"
+            android:contentDescription="@string/imageview"
             app:srcCompat="@drawable/image" />
 
         <TextView
@@ -96,6 +95,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/edittext_hint"
+        android:imeOptions="actionDone"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
