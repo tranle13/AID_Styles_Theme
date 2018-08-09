@@ -15,12 +15,36 @@
         <item name="android:layout_width">wrap_content</item>
     </style>
 
-    <style name="BaseFormStyle.FirstForm">
+    <style name="BaseFormStyle.FirstTitle">
         <item name="android:layout_marginTop">24dp</item>
     </style>
 
-    <style name="BaseFormStyle.SecondForm">
+    <style name="BaseFormStyle.RadioButtonGroup">
         <item name="android:layout_marginTop">0dp</item>
         <item name="android:layout_width">0dp</item>
+    </style>
+
+    <style name="BaseFormStyle.FrameLayoutText">
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginEnd">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="FrameLayout">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">200dp</item>
+    </style>
+
+    <style name="FrameLayout.Landscape">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">250dp</item>
+    </style>
+
+    <style name="TextColor" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/green</item>
     </style>
 </resources>
