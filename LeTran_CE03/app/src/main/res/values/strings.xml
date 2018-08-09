@@ -9,4 +9,5 @@
     <string name="title_3">Text Style (Optional)</string>
     <string name="title_4">Bold</string>
     <string name="imageview">Image Holder</string>
+    <string name="defaultText">Type in something</string>
 </resources>

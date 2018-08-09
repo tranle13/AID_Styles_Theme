@@ -44,7 +44,39 @@
         <item name="android:layout_height">250dp</item>
     </style>
 
-    <style name="TextColor" parent="android:Widget.TextView">
+    <style name="TextColor" parent="ThemeOverlay.AppCompat">
+        <item name="android:textColor">@color/purple</item>
+    </style>
+
+    <style name="TextColor.Green" parent="ThemeOverlay.AppCompat">
         <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="TextColor.Black" parent="ThemeOverlay.AppCompat">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextColor.Bold" parent="ThemeOverlay.AppCompat">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextColor.Normal" parent="ThemeOverlay.AppCompat">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextColor.Green.Bold" parent="ThemeOverlay.AppCompat">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextColor.Green.Normal" parent="ThemeOverlay.AppCompat">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextColor.Black.Bold" parent="ThemeOverlay.AppCompat">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextColor.Black.Normal" parent="ThemeOverlay.AppCompat">
+        <item name="android:textStyle">normal</item>
     </style>
 </resources>
