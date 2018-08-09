@@ -72,10 +72,13 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 if (i == R.id.rbn_TextPurple || i == R.id.rbn_TextPurple_Land) {
                     frameLayoutText.setTextAppearance(R.style.TextColor);
+                    chosenColor = 0;
                 } else if (i == R.id.rbn_TextGreen || i == R.id.rbn_TextGreen_Land) {
                     frameLayoutText.setTextAppearance(R.style.TextColor_Green);
+                    chosenColor = 1;
                 } else {
                     frameLayoutText.setTextAppearance(R.style.TextColor_Black);
+                    chosenColor = 2;
                 }
             }
         }
