@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LeTran_CE03</string>
+    <string name="title_1">Background Color</string>
+    <string name="radio_title_1">Purple</string>
+    <string name="radio_title_2">Green</string>
+    <string name="radio_title_3">Black</string>
+    <string name="edittext_hint">Display Text</string>
+    <string name="title_2">Text Color</string>
+    <string name="title_3">Text Style (Optional)</string>
+    <string name="title_4">Bold</string>
+    <string name="imageview">Image Holder</string>
+</resources>
