@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FrameLayout frameLayout = null;
     private RadioGroup radioGroup_1 = null;
-    private  RadioGroup radioGroup_2 = null;
+    private RadioGroup radioGroup_2 = null;
     private TextView frameLayoutText = null;
     private EditText changeText = null;
     private Switch bold = null;
@@ -33,10 +33,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         getViewWithOrientation();
         radioGroup_1.setOnCheckedChangeListener(radioGroupCheckedChanged);
         radioGroup_2.setOnCheckedChangeListener(radioGroupCheckedChanged);
         bold.setOnCheckedChangeListener(switchChanged);
+
         changeText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -59,38 +61,21 @@ public class MainActivity extends AppCompatActivity {
     private RadioGroup.OnCheckedChangeListener radioGroupCheckedChanged = new RadioGroup.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, int i) {
-            if (radioGroup.getId() == R.id.rdg_RadioGroup1) {
-                switch (i) {
-                    case R.id.rbn_BackgroundPurple:
-                        frameLayout.setBackgroundColor(getColor(R.color.purple));
-                        break;
-                    case R.id.rbn_BackgroundGreen:
-                        frameLayout.setBackgroundColor(getResources().getColor(R.color.green, null));
-                        break;
-                    case R.id.rbn_BackgroundBlack:
-                        frameLayout.setBackgroundColor(getColor(R.color.black));
-                        break;
-                    default:
-                        Log.i(TAG, "onCheckedChanged: OH GOSH");
-                        break;
+            if (radioGroup.getId() == R.id.rdg_RadioGroup1 || radioGroup.getId() == R.id.rdg_RadioGroup1_Land) {
+                if (i == R.id.rbn_BackgroundPurple || i == R.id.rbn_BackgroundPurple_Land) {
+                    frameLayout.setBackgroundColor(getColor(R.color.purple));
+                } else if (i == R.id.rbn_BackgroundGreen || i == R.id.rbn_BackgroundGreen_Land) {
+                    frameLayout.setBackgroundColor(getColor(R.color.green));
+                } else {
+                    frameLayout.setBackgroundColor(getColor(R.color.black));
                 }
             } else {
-                switch (i) {
-                    case R.id.rbn_TextPurple:
-                        frameLayoutText.setTextAppearance(R.style.TextColor);
-                        chosenColor = 0;
-                        break;
-                    case R.id.rbn_TextGreen:
-                        frameLayoutText.setTextAppearance(R.style.TextColor_Green);
-                        chosenColor = 1;
-                        break;
-                    case R.id.rbn_TextBlack:
-                        frameLayoutText.setTextAppearance(R.style.TextColor_Black);
-                        chosenColor = 2;
-                        break;
-                    default:
-                        Log.i(TAG, "onCheckedChanged: CRASH AND BURN!");
-                        break;
+                if (i == R.id.rbn_TextPurple || i == R.id.rbn_TextPurple_Land) {
+                    frameLayoutText.setTextAppearance(R.style.TextColor);
+                } else if (i == R.id.rbn_TextGreen || i == R.id.rbn_TextGreen_Land) {
+                    frameLayoutText.setTextAppearance(R.style.TextColor_Green);
+                } else {
+                    frameLayoutText.setTextAppearance(R.style.TextColor_Black);
                 }
             }
         }
@@ -134,21 +119,29 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    // Create function to get view depending on orientation
     private void getViewWithOrientation() {
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            frameLayout = (FrameLayout)findViewById(R.id.frameLayout_Portrait);
-            radioGroup_1 = (RadioGroup)findViewById(R.id.rdg_RadioGroup1);
-            radioGroup_2 = (RadioGroup)findViewById(R.id.rdg_RadioGroup2);
-            frameLayoutText = (TextView)findViewById(R.id.txt_FrameLayoutText);
-            changeText = (EditText)findViewById(R.id.txt_ChangeText);
-            bold = (Switch)findViewById(R.id.swt_Bold);
+            frameLayout = (FrameLayout) findViewById(R.id.frameLayout_Portrait);
+            radioGroup_1 = (RadioGroup) findViewById(R.id.rdg_RadioGroup1);
+            radioGroup_2 = (RadioGroup) findViewById(R.id.rdg_RadioGroup2);
+            frameLayoutText = (TextView) findViewById(R.id.txt_FrameLayoutText);
+            changeText = (EditText) findViewById(R.id.txt_ChangeText);
+            bold = (Switch) findViewById(R.id.swt_Bold);
         } else {
-            frameLayout = (FrameLayout)findViewById(R.id.frameLayout_Land);
-            radioGroup_1 = (RadioGroup)findViewById(R.id.rdg_RadioGroup1_Land);
-            radioGroup_2 = (RadioGroup)findViewById(R.id.rdg_RadioGroup2_Land);
-            frameLayoutText = (TextView)findViewById(R.id.txt_FrameLayoutText_Land);
-            changeText = (EditText)findViewById(R.id.txt_ChangeText_Land);
-            bold = (Switch)findViewById(R.id.swt_Bold_Land);
+            frameLayout = (FrameLayout) findViewById(R.id.frameLayout_Land);
+            radioGroup_1 = (RadioGroup) findViewById(R.id.rdg_RadioGroup1_Land);
+            radioGroup_2 = (RadioGroup) findViewById(R.id.rdg_RadioGroup2_Land);
+            frameLayoutText = (TextView) findViewById(R.id.txt_FrameLayoutText_Land);
+            changeText = (EditText) findViewById(R.id.txt_ChangeText_Land);
+            bold = (Switch) findViewById(R.id.swt_Bold_Land);
         }
+    }
+
+    // Function to get view whenever orientation changes
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        getViewWithOrientation();
     }
 }
