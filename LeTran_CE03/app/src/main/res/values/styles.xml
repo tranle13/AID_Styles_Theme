@@ -13,11 +13,13 @@
         <item name="android:layout_marginEnd">24dp</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
     <style name="BaseFormStyle.RadioButtonGroup">
         <item name="android:layout_marginTop">0dp</item>
         <item name="android:layout_width">0dp</item>
+        <item name="android:orientation">horizontal</item>
     </style>
 
     <style name="BaseFormStyle.FrameLayoutText">
@@ -25,7 +27,20 @@
         <item name="android:layout_marginEnd">0dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="RadioButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="BaseFormStyle.TextChange">
+        <item name="android:ems">10</item>
+        <item name="android:hint">@string/edittext_hint</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:inputType">text</item>
     </style>
 
     <style name="FrameLayout">
